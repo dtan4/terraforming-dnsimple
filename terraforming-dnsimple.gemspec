@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'terraforming/resource/dnsimple_record/version'
+require 'terraforming/dnsimple/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "terraforming-resource-dnsimple_record"
-  spec.version       = Terraforming::Resource::DnsimpleRecord::VERSION
+  spec.version       = Terraforming::DNSimple::VERSION
   spec.authors       = ["Daisuke Fujita"]
   spec.email         = ["dtanshi45@gmail.com"]
 
