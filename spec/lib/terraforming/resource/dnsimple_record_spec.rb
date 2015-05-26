@@ -129,7 +129,7 @@ resource "dnsimple_record" "hoge-A" {
     ttl    = "60"
 }
 
-resource "dnsimple_record" "-A" {
+resource "dnsimple_record" "32-A" {
     domain = "example2.com"
     name   = ""
     value  = "192.168.0.2"
@@ -169,7 +169,7 @@ resource "dnsimple_record" "-A" {
                     },
                   }
                 },
-                "dnsimple_record.-A" => {
+                "dnsimple_record.32-A" => {
                   "type" => "dnsimple_record",
                   "primary" => {
                     "id" => "32",
