@@ -1,2 +1,2 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'terraforming/resource/dnsimple_record'
+require 'terraforming/dnsimple'
