@@ -90,7 +90,7 @@ module Terraforming
         [
           {
             record: {
-              name: "fuga",
+              name: "",
               ttl: 3600,
               created_at: "2010-07-04T04:42:11Z",
               updated_at: "2010-10-21T15:47:47Z",
@@ -129,9 +129,9 @@ resource "dnsimple_record" "hoge" {
     ttl    = "60"
 }
 
-resource "dnsimple_record" "fuga" {
+resource "dnsimple_record" "" {
     domain = "example2.com"
-    name   = "fuga"
+    name   = ""
     value  = "192.168.0.2"
     type   = "A"
     ttl    = "3600"
@@ -164,21 +164,23 @@ resource "dnsimple_record" "fuga" {
                       "ttl" => "60",
                       "priority" => "",
                       "domain_id" => "1",
+                      "hostname" => "hoge.example1.com",
                     },
                   }
                 },
-                "dnsimple_record.fuga" => {
+                "dnsimple_record." => {
                   "type" => "dnsimple_record",
                   "primary" => {
                     "id" => "32",
                     "attributes" => {
                       "id" => "32",
-                      "name" => "fuga",
+                      "name" => "",
                       "value" => "192.168.0.2",
                       "type" => "A",
                       "ttl" => "3600",
                       "priority" => "10",
                       "domain_id" => "2",
+                      "hostname" => "example2.com",
                     },
                   }
                 }

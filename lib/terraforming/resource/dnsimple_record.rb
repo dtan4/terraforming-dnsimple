@@ -21,7 +21,7 @@ module Terraforming
 
       def tfstate
         resources = domain_records.inject({}) do |result, dr|
-          records = dr[:records]
+          domain, records = dr[:domain], dr[:records]
 
           records.each do |record|
             attributes = {
@@ -32,6 +32,7 @@ module Terraforming
               "ttl" => record.ttl.to_s,
               "priority" => record.prio.to_s,
               "domain_id" => record.domain_id.to_s,
+              "hostname" => hostname_of(domain, record),
             }
 
             result["dnsimple_record.#{module_name_of(record)}"] = {
@@ -58,6 +59,14 @@ module Terraforming
 
       def domains
         @client.domains.list
+      end
+
+      def hostname_of(domain, record)
+        if record.name == ""
+          domain
+        else
+          "#{record.name}.#{domain}"
+        end
       end
 
       def module_name_of(record)
