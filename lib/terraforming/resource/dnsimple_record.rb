@@ -70,7 +70,7 @@ module Terraforming
       end
 
       def module_name_of(record)
-        normalize_module_name(record.name)
+        normalize_module_name("#{record.name}-#{record.record_type}")
       end
 
       def template_path

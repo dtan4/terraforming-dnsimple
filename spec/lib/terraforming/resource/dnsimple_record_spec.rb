@@ -121,7 +121,7 @@ module Terraforming
       describe ".tf" do
         it "should generate tf" do
           expect(described_class.tf(client)).to eq <<-EOS
-resource "dnsimple_record" "hoge" {
+resource "dnsimple_record" "hoge-A" {
     domain = "example1.com"
     name   = "hoge"
     value  = "192.168.0.1"
@@ -129,7 +129,7 @@ resource "dnsimple_record" "hoge" {
     ttl    = "60"
 }
 
-resource "dnsimple_record" "" {
+resource "dnsimple_record" "-A" {
     domain = "example2.com"
     name   = ""
     value  = "192.168.0.2"
@@ -152,7 +152,7 @@ resource "dnsimple_record" "" {
               ],
               "outputs" => {},
               "resources" => {
-                "dnsimple_record.hoge" => {
+                "dnsimple_record.hoge-A" => {
                   "type" => "dnsimple_record",
                   "primary" => {
                     "id" => "31",
@@ -168,7 +168,7 @@ resource "dnsimple_record" "" {
                     },
                   }
                 },
-                "dnsimple_record." => {
+                "dnsimple_record.-A" => {
                   "type" => "dnsimple_record",
                   "primary" => {
                     "id" => "32",
