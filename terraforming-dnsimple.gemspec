@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'terraforming/dnsimple/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "terraforming-resource-dnsimple_record"
+  spec.name          = "terraforming-dnsimple"
   spec.version       = Terraforming::DNSimple::VERSION
   spec.authors       = ["Daisuke Fujita"]
   spec.email         = ["dtanshi45@gmail.com"]
