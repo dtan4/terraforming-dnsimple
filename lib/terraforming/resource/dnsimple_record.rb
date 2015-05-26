@@ -71,7 +71,13 @@ module Terraforming
       end
 
       def module_name_of(record)
-        normalize_module_name("#{record.name}-#{record.record_type}")
+        module_name = if record.name == ""
+                        "#{record.id}-#{record.record_type}"
+                      else
+                        "#{record.name}-#{record.record_type}"
+                      end
+
+        normalize_module_name(module_name)
       end
 
       def template_path
