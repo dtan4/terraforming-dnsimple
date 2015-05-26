@@ -164,6 +164,7 @@ resource "dnsimple_record" "-A" {
                       "ttl" => "60",
                       "priority" => "",
                       "domain_id" => "1",
+                      "domain" => "example1.com",
                       "hostname" => "hoge.example1.com",
                     },
                   }
@@ -180,6 +181,7 @@ resource "dnsimple_record" "-A" {
                       "ttl" => "3600",
                       "priority" => "10",
                       "domain_id" => "2",
+                      "domain" => "example2.com",
                       "hostname" => "example2.com",
                     },
                   }

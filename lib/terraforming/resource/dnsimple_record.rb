@@ -32,6 +32,7 @@ module Terraforming
               "ttl" => record.ttl.to_s,
               "priority" => record.prio.to_s,
               "domain_id" => record.domain_id.to_s,
+              "domain" => domain.name,
               "hostname" => hostname_of(domain, record),
             }
 
