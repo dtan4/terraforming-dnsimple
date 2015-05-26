@@ -140,6 +140,53 @@ resource "dnsimple_record" "fuga" {
           EOS
         end
       end
+
+      describe ".tfstate" do
+        it "should generate tfstate" do
+          expect(described_class.tfstate(client)).to eq JSON.pretty_generate({
+            "version" => 1,
+            "serial" => 1,
+            "modules" => {
+              "path" => [
+                "root"
+              ],
+              "outputs" => {},
+              "resources" => {
+                "dnsimple_record.hoge" => {
+                  "type" => "dnsimple_record",
+                  "primary" => {
+                    "id" => "31",
+                    "attributes"=> {
+                      "id" => "31",
+                      "name" => "hoge",
+                      "value" => "192.168.0.1",
+                      "type" => "A",
+                      "ttl" => "60",
+                      "priority" => "",
+                      "domain_id" => "1",
+                    },
+                  }
+                },
+                "dnsimple_record.fuga" => {
+                  "type" => "dnsimple_record",
+                  "primary" => {
+                    "id" => "32",
+                    "attributes" => {
+                      "id" => "32",
+                      "name" => "fuga",
+                      "value" => "192.168.0.2",
+                      "type" => "A",
+                      "ttl" => "3600",
+                      "priority" => "10",
+                      "domain_id" => "2",
+                    },
+                  }
+                }
+              }
+            }
+          })
+        end
+      end
     end
   end
 end

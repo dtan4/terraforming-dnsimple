@@ -20,7 +20,33 @@ module Terraforming
       end
 
       def tfstate
+        resources = domain_records.inject({}) do |result, dr|
+          records = dr[:records]
 
+          records.each do |record|
+            attributes = {
+              "id" => record.id.to_s,
+              "name" => record.name,
+              "value" => record.content,
+              "type" => record.record_type,
+              "ttl" => record.ttl.to_s,
+              "priority" => record.prio.to_s,
+              "domain_id" => record.domain_id.to_s,
+            }
+
+            result["dnsimple_record.#{module_name_of(record)}"] = {
+              "type" => "dnsimple_record",
+              "primary" => {
+                "id" => record.id.to_s,
+                "attributes" => attributes,
+              }
+            }
+          end
+
+          result
+        end
+
+        generate_tfstate(resources)
       end
 
       private
