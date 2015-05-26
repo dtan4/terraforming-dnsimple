@@ -74,7 +74,7 @@ module Terraforming
         module_name = if record.name == ""
                         "#{record.id}-#{record.record_type}"
                       else
-                        "#{record.name}-#{record.record_type}"
+                        "#{record.id}-#{record.name}-#{record.record_type}"
                       end
 
         normalize_module_name(module_name)
