@@ -63,9 +63,9 @@ module Terraforming
 
       def hostname_of(domain, record)
         if record.name == ""
-          domain
+          domain.name
         else
-          "#{record.name}.#{domain}"
+          "#{record.name}.#{domain.name}"
         end
       end
 
@@ -83,7 +83,7 @@ module Terraforming
 
       def domain_records
         domains.map do |domain|
-          { domain: domain.name, records: records_of(domain) }
+          { domain: domain, records: records_of(domain) }
         end
       end
     end

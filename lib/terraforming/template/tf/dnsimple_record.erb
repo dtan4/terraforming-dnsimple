@@ -2,7 +2,7 @@
   <%- domain, records = dr[:domain], dr[:records] -%>
   <%- records.each do |record| -%>
 resource "dnsimple_record" "<%= module_name_of(record) %>" {
-    domain = "<%= domain %>"
+    domain = "<%= domain.name %>"
     name   = "<%= record.name %>"
     value  = "<%= record.content %>"
     type   = "<%= record.record_type %>"
