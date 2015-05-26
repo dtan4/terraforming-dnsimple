@@ -1,7 +1,6 @@
+require "dnsimple"
+require "terraforming"
+
 require "terraforming/dnsimple/version"
 
-module Terraforming
-  module DNSimple
-    # Your code goes here...
-  end
-end
+require "terraforming/resource/dnsimple_record"

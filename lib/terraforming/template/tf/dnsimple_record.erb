@@ -1,0 +1,13 @@
+<% domain_records.each do |dr| -%>
+  <%- domain, records = dr[:domain], dr[:records] -%>
+  <%- records.each do |record| -%>
+resource "dnsimple_record" "<%= module_name_of(record) %>" {
+    domain = "<%= domain %>"
+    name   = "<%= record.name %>"
+    value  = "<%= record.content %>"
+    type   = "<%= record.record_type %>"
+    ttl    = "<%= record.ttl %>"
+}
+
+  <%- end -%>
+<% end -%>
