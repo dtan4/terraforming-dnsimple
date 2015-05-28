@@ -1,4 +1,4 @@
-# [v0.1.1](https://github.com/dtan4/terraforming-dnsimple/releases/tag/v0.1.1) (UNRELEASED)
+# [v0.1.1](https://github.com/dtan4/terraforming-dnsimple/releases/tag/v0.1.1) (2015-05-28)
 
 ### Fixed
 
