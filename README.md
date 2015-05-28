@@ -32,6 +32,60 @@ Commands:
   terraforming-dnsimple help [COMMAND]  # Describe available commands or one specific command
 ```
 
+Output `.tf` style:
+
+```bash
+$ terraforming s3 --user=<user name> --token=<api token>
+```
+
+```go
+resource "dnsimple_record" "31-hoge-A" {
+    domain = "example1.com"
+    name   = "hoge"
+    value  = "192.168.0.1"
+    type   = "A"
+    ttl    = "60"
+}
+```
+
+To output `.tfstate` style, specify `--tfstate` option:
+
+```bash
+$ terraforming s3 --tfstate --user=<user name> --token=<api token>
+```
+
+```json
+{
+  "version": 1,
+  "serial": 1,
+  "modules": {
+    "path": [
+      "root"
+    ],
+    "outputs": {
+    },
+    "resources": {
+      "dnsimple_record.31-hoge-A": {
+        "type": "dnsimple_record",
+        "primary": {
+          "id": "31",
+          "attributes": {
+            "id": "31",
+            "value": "192.168.0.1",
+            "type": "A",
+            "ttl": "60",
+            "priority": "",
+            "domain_id": "1",
+            "domain": "example1.com",
+            "hostname": "hoge.example1.com"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ## Development
 
 After checking out the repo, run `script/setup` to install dependencies. Then, run `script/console` for an interactive prompt that will allow you to experiment.
