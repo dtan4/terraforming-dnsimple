@@ -2,6 +2,8 @@
 [![Build Status](https://travis-ci.org/dtan4/terraforming-dnsimple.svg?branch=master)](https://travis-ci.org/dtan4/terraforming-dnsimple)
 [![Code Climate](https://codeclimate.com/github/dtan4/terraforming-dnsimple/badges/gpa.svg)](https://codeclimate.com/github/dtan4/terraforming-dnsimple)
 [![Test Coverage](https://codeclimate.com/github/dtan4/terraforming-dnsimple/badges/coverage.svg)](https://codeclimate.com/github/dtan4/terraforming-dnsimple/coverage)
+[![Gem Version](https://badge.fury.io/rb/terraforming-dnsimple.svg)](http://badge.fury.io/rb/terraforming-dnsimple)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 [Terraforming](https://github.com/dtan4/terraforming) extension for [DNSimple](https://dnsimple.com)
 
