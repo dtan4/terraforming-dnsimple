@@ -3,7 +3,7 @@
 [![Code Climate](https://codeclimate.com/github/dtan4/terraforming-dnsimple/badges/gpa.svg)](https://codeclimate.com/github/dtan4/terraforming-dnsimple)
 [![Test Coverage](https://codeclimate.com/github/dtan4/terraforming-dnsimple/badges/coverage.svg)](https://codeclimate.com/github/dtan4/terraforming-dnsimple/coverage)
 
-[Terraforming](https://github.com/dtan4/terraforming) plugin for [DNSimple](https://dnsimple.com)
+[Terraforming](https://github.com/dtan4/terraforming) extension for [DNSimple](https://dnsimple.com)
 
 ## Installation
 
@@ -23,7 +23,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```bash
+$ terraforming-dnsimple
+Commands:
+  terraforming-dnsimple dnsr            # DNSimple Record
+  terraforming-dnsimple help [COMMAND]  # Describe available commands or one specific command
+```
 
 ## Development
 
