@@ -3,8 +3,8 @@ module Terraforming
     class CLI < Thor
       def self.cli_options
         option :tfstate, type: :boolean
-        option :user_name, type: :string
-        option :api_token, type: :string
+        option :user, type: :string
+        option :token, type: :string
       end
 
       desc "dnsr", "DNSimple Record"
@@ -16,7 +16,7 @@ module Terraforming
       private
 
       def execute(klass, options)
-        client = Dnsimple::Client.new(username: options[:user_name], api_token: options[:api_token])
+        client = Dnsimple::Client.new(username: options[:user], api_token: options[:token])
         puts options[:tfstate] ? klass.tfstate(client) : klass.tf(client)
       end
     end
